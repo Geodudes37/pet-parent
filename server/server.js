@@ -10,9 +10,9 @@ const userController = require('../server/controllers/userController.js');
 // const pfController = require('../server/controllers/PFController.js');
 // const PFRouter = require('../server/routers/PFRouter.js');
 
-// app.use(express.json());
-// app.use(cookieParser());
-// app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cookieParser());
+app.use(express.urlencoded({ extended: true }));
 
 // const corsOptions = {
 //   origin: 'http://localhost:8080',
@@ -36,15 +36,10 @@ const userController = require('../server/controllers/userController.js');
 //   }
 // );
 // // route to create a new user
-app.get(
-  '/createuser',
-  // cookieController.setSSIDCookie,
-  // userController.createUser,
-  (req, res) => {
-    // route the user to the dashboard page successful account creation
-    return res.status(200);
-  }
-);
+app.post('/createUser', userController.createUser, (req, res) => {
+  return res
+    .status(200).send('hello there is worked haha');
+});
 
 // routes to landing page
 app.get('/', (req, res) => {

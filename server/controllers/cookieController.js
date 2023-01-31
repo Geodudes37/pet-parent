@@ -8,6 +8,7 @@ cookieController.setSSIDCookie = async (req, res, next) => {
   try {
     // const username = `${res.locals.username}`;
     res.locals.cookies = uuidv4();
+    console.log(res.locals.cookies,'THIS IS THE COOKIES')
     // console.log(username);
     // console.log(res.locals.cookies);
     // const SQLquery = `UPDATE users SET cookies = $1 WHERE username = $2`;
