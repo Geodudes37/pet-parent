@@ -29,8 +29,10 @@
     "@babel/runtime": "^7.20.13",
     "@testing-library/jest-dom": "^5.16.5",
     "babel-loader": "^9.1.2",
+    "bcryptjs": "^2.4.3",
     "clean": "^4.0.2",
     "concurrently": "^7.6.0",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.3",
@@ -48,6 +50,7 @@
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
     "supertest": "^6.3.3",
+    "uuid": "^9.0.0",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
