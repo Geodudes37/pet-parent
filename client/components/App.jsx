@@ -13,11 +13,10 @@ export const SCREEN_MAP = {
 
 const App = () => {
 
-  const [currentScreen, setCurrentScreen] = useState(SCREEN_MAP.login);
+  // const [currentScreen, setCurrentScreen] = useState(SCREEN_MAP.login);
   return(
     <Router>
       <div className='app-page'>
-
         {/* <Link to="/login">Login</Link>
         <Link to="/create-user">Create User</Link>
         <Link to="/">Dashboard</Link> */}
@@ -26,7 +25,6 @@ const App = () => {
           <Route exact path='/' element={<Dashboard/>}/>
           <Route exact path='/login' element={<Login/>}/>
           <Route exact path='/create-user' element={<CreateUser/>}/>
-
 
           {/* {currentScreen === SCREEN_MAP.createUser && (
               <CreateUser setCurrentScreen={setCurrentScreen}/>
