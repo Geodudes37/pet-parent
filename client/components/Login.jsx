@@ -63,7 +63,7 @@ const Login = (props) => {
     }}
     >Click here to Sign Up</button>
     {/* <button onClick={() => {props.setCurrentScreen(SCREEN_MAP.createUser)}}>Go to create user!</button> */}
-    {/* <Link to="/create-user">Go to create user!</Link> */}
+    <Link to="/dashboard">Dashboard should be protected</Link>
     </div>
   </div>
   </>
