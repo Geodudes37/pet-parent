@@ -102,7 +102,7 @@ const CreateUser = (props) => {
             backToDashBtn();
           }}
         >
-           <Link to="/">Go to Dashboard!</Link>
+           <Link to="/">Go back to Login</Link>
         </a>
       </div> 
     {/* { <button onClick={() => {props.setCurrentScreen(SCREEN_MAP.dashboard)}}>Go to dashboard!</button> } */}
