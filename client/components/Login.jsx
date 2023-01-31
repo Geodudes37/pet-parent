@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-// import { SCREEN_MAP } from './App.jsx';
 import { useNavigate } from "react-router-dom";
 
 
@@ -32,9 +31,11 @@ const Login = (props) => {
   return (
     <>
     <header className='logo'>Welcome to Pet-Parent</header>
-    <div className="login">
+    <form className="login"
+    onSubmit={loginRequest}
+    >
     <div className='container'>
-    <div id="login-title">Login</div>
+    <div className="form-title" id="form-title">Login</div>
     <label>
       Username
       <input 
@@ -55,17 +56,17 @@ const Login = (props) => {
       type="password" 
       />
     </label>
-    <button disabled={!username || !password} onClick={loginRequest}>Log In</button>
+    <button disabled={!username || !password} >Log In</button>
     <div className='divider' />
     <button className='create-user'
     onClick={()=>{
       navigate("/create-user")
     }}
     >Click here to Sign Up</button>
-    {/* <button onClick={() => {props.setCurrentScreen(SCREEN_MAP.createUser)}}>Go to create user!</button> */}
     <Link to="/dashboard">Dashboard should be protected</Link>
+    <Link to="/preferences">Preferences should be protected</Link>
     </div>
-  </div>
+  </form>
   </>
   );
 }

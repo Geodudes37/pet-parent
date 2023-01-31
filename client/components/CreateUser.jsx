@@ -43,7 +43,7 @@ const CreateUser = (props) => {
 
   return (
   <div className='create-user container'>
-    <h4>Create User!</h4>
+    <h4 className="form-title">Create User!</h4>
     <div className="input-container">
         <label>Name</label>
         <input
@@ -88,15 +88,13 @@ const CreateUser = (props) => {
             sendInfo(e);
           }}
         >
-          submit
+          Submit
         </button>
         <button 
          onClick={()=>{
           navigate("/")
         }}
         >Go back to Login</button>
-      {/* <Link to="/">Go back to Login</Link>  */}
-    {/* { <button onClick={() => {props.setCurrentScreen(SCREEN_MAP.dashboard)}}>Go to dashboard!</button> } */}
   </div>);
 }
 

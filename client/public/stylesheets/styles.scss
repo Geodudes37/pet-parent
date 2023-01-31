@@ -9,19 +9,20 @@
   align-items: center;
   min-width: 100%;
   min-height: 100vh;
-  color: white;
+  color: #ffe97b;
   font-size: larger;
   background: url('https://i.imgur.com/NkubCok.jpg');
   background-size: 400px;
   background-repeat: repeat;
   a {
     margin: 15px;
-    text-shadow: 0 0 .1rem #ffdb80,
-    0 0 .1rem #ffdb80,
-    0 0 1rem #ffdb80,
-    0 0 0.2rem #ffdb80,
-    0 0 1.0rem #ffdb80;
-    font-size: 2rem;
+    color: #dfac29;
+    // text-shadow: 0 0 .1rem #ffdb80,
+    // 0 0 .1rem #ffdb80,
+    // 0 0 1rem #ffdb80,
+    // 0 0 0.2rem #ffdb80,
+    // 0 0 1.0rem #ffdb80;
+    font-size: 1.5rem;
     &:active{
       color: #ffdb80;
     }
@@ -31,11 +32,24 @@
   }
 }
 
-#login-title{
+.app-page h2 {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+  color: #de8cff;
+  text-shadow:
+    0 0 2.5px #fff,
+    0 0 5px #fff,
+    0 0 10px #fff,
+}
+
+.form-title{
   font-family: 'Pacifico', cursive;
   font-size: 28px;
   margin-bottom: 5px;
- color:white;
+  color: white;
 }
 
 .title{
@@ -63,15 +77,25 @@
   0 0 0.8rem #bc13fe,
   0 0 2.8rem #bc13fe,
   inset 0 0 1.3rem #bc13fe; 
-  border-radius: .4rem;
+  border-radius: 2rem;
   margin: 30px;
+}
+
+
+.form.container{
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+  height: 650px;
+  font-size: 20px;
+  color: #ffe97b;
 }
 
 input{
   margin: 10px;
   padding: 8px;
-  width: 200px;
-  border-radius: .9rem;
+  width: 280px;
+  border-radius: 1.5rem;
 }
 
 .logo{
@@ -85,12 +109,38 @@ input{
     0 0 10px #fff,
 }
 
+label{
+  margin: 10px;
+}
+
+.dropdown{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 300px;
+}
+
+.zip-code{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 5px;
+  label{
+    margin-left: 20px;
+  }
+  input{
+    padding: 10px;
+  }
+}
+
+
+
 button {
   font-family: 'Roboto Flex', sans-serif;
   color: black;
   padding: 8px;
-  margin: 8px;
-  width: 60%;
+  margin: 12px;
+  width: 75%;
   background-color: #ffdb80;
   border: #ffdb80;
   border-radius: 0.9rem;
@@ -98,4 +148,10 @@ button {
 
 button:hover{
   background-color: #dfac29;
+}
+
+.select{
+  padding: 10px;
+  border-radius: 1.5rem;
+  background-color: white;
 }
