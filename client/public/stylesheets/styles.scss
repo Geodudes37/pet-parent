@@ -1,14 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;600;700&family=Montserrat:wght@300&family=Pacifico&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,700;1,900&display=swap');
+
+
 .app-page {
-  // background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 100%;
   min-height: 100vh;
-  color: lightgrey;
+  color: white;
+  font-size: larger;
   background: url('https://i.imgur.com/NkubCok.jpg');
   background-size: 400px;
   background-repeat: repeat;
-  //background: url('https://img.freepik.com/free-vector/different-funny-dogs-cartoon-style-isolated-white-background_1308-54624.jpg?w=1480&t=st=1675120155~exp=1675120755~hmac=a1cf79d6f1b7b4e6988919954a0b6843ef1fe8b64b8aebfc045cc27d87173c9e');
+  a {
+    margin: 15px;
+    text-shadow: 0 0 .1rem #ffdb80,
+    0 0 .1rem #ffdb80,
+    0 0 1rem #ffdb80,
+    0 0 0.2rem #ffdb80,
+    0 0 1.0rem #ffdb80;
+    font-size: 2rem;
+    &:active{
+      color: #ffdb80;
+    }
+    &:visited{
+      color: #ffdb80;
+    }
   }
-  // I just found a cute tileable background and wanna see how it looks :)
-  // It's so cuuute! :)
-  
+}
+
+.title{
+  font-family: 'Cormorant', serif;
+  color: #bc13fe;
+  font-size: 40px;
+  background: black;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  background-image: url(../assets/dog-head.png);
+  background-size: cover;
+  background-color: rgb(13, 19, 20);
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem #bc13fe,
+  0 0 0.8rem #bc13fe,
+  0 0 2.8rem #bc13fe,
+  inset 0 0 1.3rem #bc13fe; 
+  border-radius: .4rem;
+  margin: 30px;
+}
+
+//background: url('https://img.freepik.com/free-vector/different-funny-dogs-cartoon-style-isolated-white-background_1308-54624.jpg?w=1480&t=st=1675120155~exp=1675120755~hmac=a1cf79d6f1b7b4e6988919954a0b6843ef1fe8b64b8aebfc045cc27d87173c9e');
   // https://img.freepik.com/free-vector/animal-pattern-background-colorful-seamless-line-art-design-vector_53876-156408.jpg?w=1380&t=st=1675122012~exp=1675122612~hmac=379dd95029d6a6a588b9ef35b6d4a70547ef4f047c1571b261c501c2510dd35b
