@@ -9,14 +9,11 @@ const userController = {};
 // middlware to verify password from user against hashed password saved in DB
 userController.verifyUser = async (req, res, next) => {
   const { username, password } = req.body;
-  const salt = bcrypt.genSaltSync(10);
-  const hashedPassword = bcrypt.hashSync(password, salt);
   // query the database for the username and saved hashed password
-  const SQLquery = `SELECT (password) FROM users WHERE username = $1`;
+  const SQLquery = `SELECT password,cookies FROM users WHERE username = $1`;
   const SQLparams = [username];
   try {
     const queryResponse = await db.query(SQLquery, SQLparams);
-    console.log(queryResponse,'QUER RESPONSE')
     if (!queryResponse.rows[0]) {
       return next({
         log: `User not found during verifyUser: ${error}`,
@@ -24,20 +21,17 @@ userController.verifyUser = async (req, res, next) => {
         message: { error },
       });
     }
-    else {
-      const result = bcrypt.compareSync(hashedPassword, queryResponse[0].password)
-      if (result) {
-        return next()
-      }
-      else {
-       return  next({
+      const { rows } = queryResponse;
+      const result = bcrypt.compareSync(password, rows[0].password);
+      if (!result) {
+        return  next({
           log: `Incorrect password`,
           status: 400,
           message: { error },
         });
       }
-    }
-    res.locals.username = username;
+      //set the user cookie if they exist in db
+    res.cookie('user',rows[0].cookies);
     return next();
     }catch(error){
       return  next({
@@ -51,14 +45,13 @@ userController.verifyUser = async (req, res, next) => {
 
 // middleware to create a user/account in DB
 userController.createUser = async (req, res, next) => {
-  console.log('')
+  console.log('inside of creatUser middleware')
   const { username, password, firstname, lastname, zipcode} =
     req.body;
-    console.log(req.body,'ASDFUAOBWERIUFBLAIU')
   const salt = bcrypt.genSaltSync(10);
   const hashedPassword = bcrypt.hashSync(password, salt);
-  res.locals.cookies = uuidv4();
-  const cookies = res.locals.cookies;
+  // //manually set cookie here, should be removed when we get cookie functionality
+  // res.locals.cookies = uuidv4();
 
   const SQLquery = `INSERT INTO users (username, password, firstname, lastname, zipcode, cookies,salt)
     VALUES ($1, $2, $3, $4, $5, $6, $7)`;
@@ -69,13 +62,14 @@ userController.createUser = async (req, res, next) => {
     firstname,
     lastname,
     zipcode,
-    cookies,
+    res.locals.cookie,
     salt
   ];
 
   try {
     const queryResponse = await db.query(SQLquery, SQLparams);
     console.log('posting to users table completed');
+    res.locals.cookie = uuidv4();
     return next();
   } catch (error) {
     return next({

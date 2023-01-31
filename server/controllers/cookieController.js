@@ -6,14 +6,10 @@ const cookieController = {};
 cookieController.setSSIDCookie = async (req, res, next) => {
   console.log('inside cookieController setSSIDCookie middleware')
   try {
-    // const username = `${res.locals.username}`;
-    res.locals.cookies = uuidv4();
-    console.log(res.locals.cookies,'THIS IS THE COOKIES')
-    // console.log(username);
-    // console.log(res.locals.cookies);
-    // const SQLquery = `UPDATE users SET cookies = $1 WHERE username = $2`;
-    // const SQLparams = [res.locals.cookies, username];
-    // const queryResponse = await db.query(SQLquery, SQLparams);
+    res.cookie('user',res.locals.cookie,{
+      httpOnly: true,
+    });
+    console.log(res.locals.cookie,'THIS IS THE COOKIES')
     return next();
   } catch (error) {
     return next({
@@ -26,7 +22,7 @@ cookieController.setSSIDCookie = async (req, res, next) => {
 
 cookieController.verifySSIDCookie = async (req, res, next) => {
   const SQLquery = `SELECT username from users where cookies=$1`;
-  const SQLparams = [res.locals.cookies];
+  const SQLparams = [req.cookies.user];
   try {
     const queryResponse = await db.query(SQLquery, SQLparams);
     if (!queryResponse) {

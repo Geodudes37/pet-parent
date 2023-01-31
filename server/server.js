@@ -26,19 +26,14 @@ app.use(express.urlencoded({ extended: true }));
 // app.use('/build', express.static(path.join(__dirname, '../build')));
 
 // route to log in / authentication
-// app.post(
-//   '/login',
-//   userController.verifyUser,
-//   cookieController.setSSIDCookie,
-//   (req, res) => {
-//     // redirect to page with user specific data
-//     return res.status(200);
-//   }
-// );
-// // route to create a new user
-app.post('/createUser', userController.createUser, (req, res) => {
+app.post('/login', userController.verifyUser, (req, res) => {
   return res
-    .status(200).send('hello there is worked haha');
+    .status(200).send('hello verify worked is worked haha');
+});
+// // route to create a new user
+app.post('/createUser', userController.createUser,cookieController.setSSIDCookie, (req, res) => {
+  return res
+    .status(200).send('successful user creation');
 });
 
 // routes to landing page
@@ -47,7 +42,6 @@ app.get('/', (req, res) => {
     .status(200)
     .sendFile(path.join(__dirname, '../client/public/index.html'));
 });
-
 // route to external petfinder API
 // app.use('/api', PFRouter);
 
