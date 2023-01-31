@@ -14,6 +14,9 @@ export const SCREEN_MAP = {
 const App = () => {
 
   const [currentScreen, setCurrentScreen] = useState(SCREEN_MAP.login);
+  const [showCreateAccount, setCreateAccount] = useState(false);
+  const [showWebsite, setShowwebsite] = useState(false);
+  
   return(
     <Router>
       <div className='app-page'>
