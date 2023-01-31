@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;600;700&family=Montserrat:wght@300&family=Pacifico&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
 
 .app-page {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-width: 100%;
@@ -29,6 +31,13 @@
   }
 }
 
+#login-title{
+  font-family: 'Pacifico', cursive;
+  font-size: 28px;
+  margin-bottom: 5px;
+ color:white;
+}
+
 .title{
   font-family: 'Cormorant', serif;
   color: #bc13fe;
@@ -41,11 +50,13 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 500px;
-  height: 500px;
+  font-family: 'Roboto Flex', sans-serif;
+  width: 550px;
+  height: 600px;
   background-image: url(../assets/dog-head.png);
   background-size: cover;
   background-color: rgb(13, 19, 20);
+  opacity: 95%;
   box-shadow: 0 0 .2rem #fff,
   0 0 .2rem #fff,
   0 0 2rem #bc13fe,
@@ -56,5 +67,35 @@
   margin: 30px;
 }
 
-//background: url('https://img.freepik.com/free-vector/different-funny-dogs-cartoon-style-isolated-white-background_1308-54624.jpg?w=1480&t=st=1675120155~exp=1675120755~hmac=a1cf79d6f1b7b4e6988919954a0b6843ef1fe8b64b8aebfc045cc27d87173c9e');
-  // https://img.freepik.com/free-vector/animal-pattern-background-colorful-seamless-line-art-design-vector_53876-156408.jpg?w=1380&t=st=1675122012~exp=1675122612~hmac=379dd95029d6a6a588b9ef35b6d4a70547ef4f047c1571b261c501c2510dd35b
+input{
+  margin: 10px;
+  padding: 8px;
+  width: 200px;
+  border-radius: .9rem;
+}
+
+.logo{
+  margin: 50px;
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+  color: #de8cff;
+  text-shadow:
+    0 0 2.5px #fff,
+    0 0 5px #fff,
+    0 0 10px #fff,
+}
+
+button {
+  font-family: 'Roboto Flex', sans-serif;
+  color: black;
+  padding: 8px;
+  margin: 8px;
+  width: 60%;
+  background-color: #ffdb80;
+  border: #ffdb80;
+  border-radius: 0.9rem;
+}
+
+button:hover{
+  background-color: #dfac29;
+}
