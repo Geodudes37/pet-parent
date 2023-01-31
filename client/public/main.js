@@ -5,7 +5,7 @@
 // // import Routing from '../components/Routing.jsx';
 
 // // uncomment so that webpack can bundle styles
-// // import styles from './stylesheets/styles.scss';
+import styles from './stylesheets/styles.scss';
 
 // render(
 // //   <BrowserRouter>
