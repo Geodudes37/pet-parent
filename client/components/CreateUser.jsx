@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { SCREEN_MAP } from './App.jsx';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 
 const CreateUser = (props) => {
   const [name, setName] = useState('');
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const sendUserInfo = (ele) => {
     const requestBody = { name, username, password };
@@ -37,10 +39,6 @@ const CreateUser = (props) => {
       .catch(() => {
         alert('The username has already been taken.');
       })
-  }
-  
-  const backToDashBtn = () => {
-    props.setCreateAccount(false);
   }
 
   return (
@@ -85,26 +83,19 @@ const CreateUser = (props) => {
           }}
         />
       </div>
-      <div className="button-container">
         <button
-          className="submit-button"
           onClick={(e) => {
             sendInfo(e);
           }}
         >
           submit
         </button>
-      </div>
-      <div className="go-to-dashboard">
-        <a
-          href="#"
-          onClick={(e) => {
-            backToDashBtn();
-          }}
-        >
-           <Link to="/">Go back to Login</Link>
-        </a>
-      </div> 
+        <button 
+         onClick={()=>{
+          navigate("/")
+        }}
+        >Go back to Login</button>
+      {/* <Link to="/">Go back to Login</Link>  */}
     {/* { <button onClick={() => {props.setCurrentScreen(SCREEN_MAP.dashboard)}}>Go to dashboard!</button> } */}
   </div>);
 }
