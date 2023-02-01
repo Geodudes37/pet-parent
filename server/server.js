@@ -8,7 +8,8 @@ const PORT = 3000;
 const cookieController = require('../server/controllers/cookieController.js');
 const userController = require('../server/controllers/userController.js');
 // const pfController = require('../server/controllers/PFController.js');
-// const PFRouter = require('../server/routers/PFRouter.js');
+const petController = require('../server/controllers/petController.js')
+const PFRouter = require('../server/routers/PFRouter.js');
 
 app.use(express.json());
 app.use(cookieParser());
@@ -45,10 +46,20 @@ app.get('/', (req, res) => {
     .sendFile(path.join(__dirname, '../client/public/index.html'));
 });
 // route to external petfinder API
-// app.use('/api', PFRouter);
+app.use('/api', PFRouter);
 
 // route to userRouter for adding/linking pets to user and pet interactions data stuff
-// app.use('/dashboard/pets', userRouter);
+app.post('/pet', petController.addPet, (req, res) => {
+  return res
+  .status(200).send('pet successfully added to DB');
+});
+
+app.get('/pet', petController.getPet, (req, res) => {
+  return res
+  .status(200).send(res.locals.pet);
+});
+
+
 
 // global error handling
 app.use((req, res) => res.sendStatus(404));
