@@ -24,7 +24,7 @@ const CreateUser = (props) => {
 
     //post request to create user
     try {
-      const response = await fetch('/createUser', {
+      const response = await fetch('http://localhost:3000/createUser', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -109,7 +109,7 @@ const CreateUser = (props) => {
       <div className="input-container">
         <label>Password</label>
         <input
-          type="text"
+          type="password"
           name="password"
           required
           className="login-input"

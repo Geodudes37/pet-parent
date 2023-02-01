@@ -5,9 +5,14 @@ const cookieController = {};
 
 cookieController.setSSIDCookie = async (req, res, next) => {
   try {
-    res.cookie('user',res.locals.cookie,{
+    // const SQLquery = `UPDATE users SET cookies = $1, WHERE username = $2`;
+    // const SQLparams = [res.locals.cookie,res.locals.username];
+    console.log(res.locals.cookie, "COOKIE OF USER SET IN RESPONSE COOKIE")
+    res.cookie('user',res.locals.cookie, {
       httpOnly: true,
     });
+    //insert cookie into correct row
+    // await db.query(SQLquery,SQLparams);
     return next();
   } catch (error) {
     return next({

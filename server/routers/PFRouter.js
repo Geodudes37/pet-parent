@@ -3,7 +3,7 @@ const PFController = require('../controllers/PFController.js');
 
 const PFRouter = express.Router();
 
-PFRouter.get('/pets', PFController.getPets, (req, res) => {
+PFRouter.post('/pets', PFController.getPets, (req, res) => {
   return res.status(200).send(res.locals.pets);
 });
 
