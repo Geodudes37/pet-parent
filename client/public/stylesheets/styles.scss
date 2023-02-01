@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;600;700&family=Montserrat:wght@300&family=Pacifico&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@400;600;700&family=Montserrat:wght@300&family=Pacifico&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap");
 
+body {
+  margin: 0;
+}
 .app-page {
   display: flex;
   flex-direction: column;
@@ -11,7 +14,7 @@
   min-height: 100vh;
   color: #ffe97b;
   font-size: larger;
-  background: url('https://i.imgur.com/NkubCok.jpg');
+  background: url("https://i.imgur.com/NkubCok.jpg");
   background-size: 400px;
   background-repeat: repeat;
   a {
@@ -23,10 +26,10 @@
     // 0 0 0.2rem #ffdb80,
     // 0 0 1.0rem #ffdb80;
     font-size: 1.5rem;
-    &:active{
+    &:active {
       color: #ffdb80;
     }
-    &:visited{
+    &:visited {
       color: #ffdb80;
     }
   }
@@ -36,24 +39,20 @@
   display: flex;
   justify-content: center;
   margin: 50px;
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
   font-size: 50px;
   color: #de8cff;
-  text-shadow:
-    0 0 2.5px #fff,
-    0 0 5px #fff,
-    0 0 10px #fff,
+  text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 10px #fff;
 }
 
-.form-title{
-  font-family: 'Pacifico', cursive;
-  font-size: 28px;
-  margin-bottom: 5px;
-  color: white;
+.form-title {
+  font-family: "Pacifico", cursive;
+  font-size: 38px;
+  margin-bottom: 20px;
 }
 
-.title{
-  font-family: 'Cormorant', serif;
+.title {
+  font-family: "Cormorant", serif;
   color: #bc13fe;
   font-size: 40px;
   background: black;
@@ -64,25 +63,20 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  font-family: 'Roboto Flex', sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   width: 550px;
   height: 600px;
   background-image: url(../assets/dog-head.png);
   background-size: cover;
   background-color: rgb(13, 19, 20);
   opacity: 95%;
-  box-shadow: 0 0 .2rem #fff,
-  0 0 .2rem #fff,
-  0 0 2rem #bc13fe,
-  0 0 0.8rem #bc13fe,
-  0 0 2.8rem #bc13fe,
-  inset 0 0 1.3rem #bc13fe; 
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
   border-radius: 2rem;
   margin: 30px;
 }
 
-
-.form.container{
+.form.container {
   display: flex;
   flex-direction: column;
   width: 550px;
@@ -91,52 +85,47 @@
   color: #ffe97b;
 }
 
-input{
+input {
   margin: 10px;
   padding: 8px;
   width: 280px;
   border-radius: 1.5rem;
 }
 
-.logo{
+.logo {
   margin: 50px;
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
   font-size: 50px;
   color: #de8cff;
-  text-shadow:
-    0 0 2.5px #fff,
-    0 0 5px #fff,
-    0 0 10px #fff,
+  text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 10px #fff;
 }
 
-label{
+label {
   margin: 10px;
 }
 
-.dropdown{
+.dropdown {
   display: flex;
   flex-direction: column;
   margin: 10px;
   width: 300px;
 }
 
-.zip-code{
+.zip-code {
   display: flex;
   flex-direction: column;
   margin: 10px;
   padding: 5px;
-  label{
+  label {
     margin-left: 20px;
   }
-  input{
+  input {
     padding: 10px;
   }
 }
 
-
-
 button {
-  font-family: 'Roboto Flex', sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   color: black;
   padding: 8px;
   margin: 12px;
@@ -146,12 +135,34 @@ button {
   border-radius: 0.9rem;
 }
 
-button:hover{
+button:hover {
   background-color: #dfac29;
 }
 
-.select{
+.select {
   padding: 10px;
   border-radius: 1.5rem;
   background-color: white;
+}
+
+// Dashboard page styling
+.dashboard-page {
+  background: rgba(40, 37, 37, 0.8);
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .profile-pic-wrapper {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+  .doggie-care-buttons {
+    // display: flex;
+  }
 }

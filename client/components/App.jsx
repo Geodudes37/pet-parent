@@ -13,12 +13,12 @@ const App = () => {
     <Router>
       <div className='app-page'>
         <Routes>
-          <Route exact path='/' element={<Login/>}/>
-          <Route exact path='/preferences' element={<Preferences/>}/>
+          <Route exact path='/create-user' element={<CreateUser/>}/>
           <Route element={<ProtectedRoutes/>}>
+            <Route exact path='/' element={<Login/>}/>
+            <Route exact path='/preferences' element={<Preferences/>}/>
             <Route exact path='/dashboard' element={<Dashboard/>}/>
           </Route>
-            <Route exact path='/create-user' element={<CreateUser/>}/>
         </Routes>
       </div>
     </Router>

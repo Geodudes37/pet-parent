@@ -8,7 +8,6 @@
     "start": "NODE_ENV=production nodemon server/server.js",
     "dev": "concurrently \"cross-env NODE_ENV=development webpack-dev-server --open --hot \" \"nodemon ./server/server.js\"",
     "build": "NODE_ENV=production webpack"
-  
   },
   "repository": {
     "type": "git",
@@ -57,6 +56,8 @@
     "webpack-dev-server": "^4.11.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "eslint": "^8.33.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.3"
   }
 }

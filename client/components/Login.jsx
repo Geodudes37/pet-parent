@@ -9,7 +9,9 @@ const Login = (props) => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const loginRequest = async() =>{
+  const loginRequest = async(event) =>{
+    //this will prevent the default behaviour of the onSubmit page which is refreshing the page
+    event.preventDefault()
     const requestBody = {
       username,
       password,
@@ -22,7 +24,7 @@ const Login = (props) => {
       });
       const data = await response.json()
       if(data){
-        navigate("/dashboard");
+        navigate("/preferences");
       }
     }catch(err){
       console.log(err)
@@ -63,8 +65,8 @@ const Login = (props) => {
       navigate("/create-user")
     }}
     >Click here to Sign Up</button>
-    <Link to="/dashboard">Dashboard should be protected</Link>
-    <Link to="/preferences">Preferences should be protected</Link>
+    {/* <Link to="/dashboard">Dashboard should be protected</Link>
+    <Link to="/preferences">Preferences should be protected</Link> */}
     </div>
   </form>
   </>
