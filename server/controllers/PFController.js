@@ -20,7 +20,7 @@ curl -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJj
 // last updated 11:53am 2/1/2023
 // PASTE THE access_token from terminal response here:
 const API_AccessToken =
-  "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJjYTJQVnVKd1BIZ0d2dmk3V1ZTejJJWlFKa1pUR1k3NlQ3cFc5amRHR2VaZWRqT1JFOSIsImp0aSI6IjBhY2I1OGY0MDE3ZGUwZjIyZTZiZDM4NzE4NTljYzQwZWQyZjFmNzVjNGIwYjgzNzZlMjFiMjFjZWU5NmRjMGNlODkyNmY4M2UxZDJhNDRjIiwiaWF0IjoxNjc1Mjc4NzUwLCJuYmYiOjE2NzUyNzg3NTAsImV4cCI6MTY3NTI4MjM1MCwic3ViIjoiIiwic2NvcGVzIjpbXX0.reYPu8t7CamDK3QgXLXOOEzmESglLPmwXrx3ublDqwrQXEiMoyECphfMwB113S9MldGkQmaEgo_Q1Tmk6c-oLx70_oOm9UPdwj4MLmxOFdRCYESX2HHfuI3HhinKvfXjWc4PDZmy6OMxsZ6qn_lvxgwXG1JqUnX8MjO6BDehSANZHnJZ8XN1my2CHVwQu7H-01-pRmPTIn5kAWOIOUlvk4OYPo3jMeRNcFRfWvg1fAt85cOIGQmA4YCye5qK5Mm5R2vYSBj0g18OZZyxt03EVSxlNUSm8i_ww1I6Vq-npezd6Q8FiUjMA-vxKAn-Pfzt_VfmnQJoOZ0DLAXsVPkaQA";
+  "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJjYTJQVnVKd1BIZ0d2dmk3V1ZTejJJWlFKa1pUR1k3NlQ3cFc5amRHR2VaZWRqT1JFOSIsImp0aSI6IjI2YjI1MmJlZGFmMTQyYjRmMmI3OTRlMGE0MTNmM2M2YjYyZWVlZmI2YmQyNjg3YzI5M2M0Zjc2ZTAxYWM4M2NlNTlhMGM0YWQ1NTU1MWMzIiwiaWF0IjoxNjc1Mjg4MDYyLCJuYmYiOjE2NzUyODgwNjIsImV4cCI6MTY3NTI5MTY2Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.gBgU2hqj2K1nCF-YK0ANWLJASCG_migNPzJgjntgjGujx6qNGHHBqeSfouelYqns6Y1JuBnWoTzLM1llUwKETlz3szVhcMNYAhMXkfWtu0TCstwOU8XYO9QFIeMdCK51cpy8KS-Fe1QLu7oiym2yBCra5wl3PFJfSogKkQwPi7BYcPcXkLfLNbNuU7H5UE4HZuDwww4tp3YRSJ_wydMtrXcM4_yH_9muCem7OIE4bOILUd48wYEjzj_X4tNVkIhrZjJAcKPK6naKA8vUbYB9ItN5AKKMQMOQzpu8cvvYeCkv2i070E95ePRFyohADyupvUxmOFAqjsoBwR5yE-YxjQ";
 const PFController = {};
 
 PFController.getPets = async (req, res, next) => {
@@ -59,7 +59,7 @@ PFController.getPets = async (req, res, next) => {
         const breed = currentAnimal.breeds.primary;
         const primaryPhoto = currentAnimal.primary_photo_cropped.full;
         const photos = currentAnimal.photos;
-        console.log("CURRENT ANIMAL IS: ", currentAnimal);
+        // console.log("CURRENT ANIMAL IS: ", currentAnimal);
         const selectedAnimal = {
           id,
           name,

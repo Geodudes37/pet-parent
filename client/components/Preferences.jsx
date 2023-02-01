@@ -57,12 +57,14 @@ const Preferences = (props) => {
         },
       });
       const data = await response.json();
-      console.log(data);
-      setPetData(data);
-      //   if (data) {
-      //     setSelectedPet(data);
-      //     navigate("/dashboard");
-      //   }
+      console.log("DATA", data[0]);
+      //   props.setSelectedPet(data[0]);
+      if (data) {
+        props.setSelectedPet(data[0]);
+        navigate("/dashboard");
+      } else {
+        navigate("/dashboard");
+      }
     } catch (error) {
       (error) => console.log(error);
     }
