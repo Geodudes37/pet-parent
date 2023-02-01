@@ -31,12 +31,12 @@ app.use(express.urlencoded({ extended: true }));
 // route to log in / authentication
 app.post('/login', userController.verifyUser, (req, res) => {
   return res
-    .status(200).send('hello verify worked is worked haha');
+  .status(200).json({message: 'user logged in successfully'});
 });
 // // route to create a new user
 app.post('/createUser', userController.createUser,cookieController.setSSIDCookie, (req, res) => {
   return res
-    .status(200).send('successful user creation');
+    .status(200).json({message: 'user created successfully'});
 });
 
 // routes to landing page
