@@ -76,6 +76,24 @@ body {
   margin: 30px;
 }
 
+.score-board {
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Roboto Flex", sans-serif;
+  width: 550px;
+  height: 200px;
+  background-color: rgb(13, 19, 20);
+  opacity: 95%;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+  border-radius: 2rem;
+  margin: 30px;
+  padding: 40px;
+}
+
 .form.container {
   display: flex;
   flex-direction: column;
@@ -147,6 +165,7 @@ button:hover {
 
 // Dashboard page styling
 .dashboard-page {
+  font-family: "Roboto Flex", sans-serif;
   background: rgba(40, 37, 37, 0.8);
   min-width: 100%;
   min-height: 100vh;

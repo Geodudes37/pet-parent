@@ -26,6 +26,8 @@ const DUMMY_DATA_DOG = {
         '<iframe src="https://www.youtube.com/embed/xaXbs1fRFRM" frameborder="0" allowfullscreen></iframe>',
     },
   ],
+  description: "Spot is an amazing dog",
+  url: "https://www.petfinder.com/dog/mac-59801419/nj/lafayette/father-johns-animal-house-nj117/?referrer_id=ad9e40cd-d5d2-417b-b60d-98397817dc31",
 };
 
 const App = () => {
