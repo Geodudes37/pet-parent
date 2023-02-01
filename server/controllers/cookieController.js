@@ -4,12 +4,10 @@ const { v4: uuidv4 } = require('uuid');
 const cookieController = {};
 
 cookieController.setSSIDCookie = async (req, res, next) => {
-  console.log('inside cookieController setSSIDCookie middleware')
   try {
     res.cookie('user',res.locals.cookie,{
       httpOnly: true,
     });
-    console.log(res.locals.cookie,'THIS IS THE COOKIES')
     return next();
   } catch (error) {
     return next({

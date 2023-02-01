@@ -24,7 +24,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // serves static files
 // app.use('/build', express.static(path.join(__dirname, '../build')));
-
+// app.post('/checkVerifyCookie',cookieController.verifySSIDCookie,(req,res)=>{
+//   return res.status(200).send('verified ' + req.cookies);
+// });
 // route to log in / authentication
 app.post('/login', userController.verifyUser, (req, res) => {
   return res
