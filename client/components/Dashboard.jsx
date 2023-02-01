@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { redirect } from "react-router-dom";
 
 const Dashboard = (props) => {
-  const { name, photos } = DUMMY_DATA_DOG;
+  const { selectedPet } = props;
+  const { name, photos } = selectedPet;
   return (
     <div className="dashboard-page">
       <h2>{name}</h2>

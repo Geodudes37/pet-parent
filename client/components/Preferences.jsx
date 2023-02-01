@@ -59,18 +59,14 @@ const Preferences = (props) => {
       const data = await response.json();
       console.log(data);
       setPetData(data);
-      if (data) {
-        setSelectedPet(data);
-        navigate("/dashboard");
-      }
+      //   if (data) {
+      //     setSelectedPet(data);
+      //     navigate("/dashboard");
+      //   }
     } catch (error) {
       (error) => console.log(error);
     }
-    //      .then((response) => response.json())
-    //      .then((data) => {
-    //         setPetData(data);
-    //    })
-    //    .catch((err) => console.log(err));
+    navigate("/dashboard");
   };
 
   const changeHandler = (entry, key) => {
