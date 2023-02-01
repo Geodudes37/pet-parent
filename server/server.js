@@ -1,19 +1,19 @@
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
+const express = require('express')
+const cors = require('cors')
+const path = require('path')
 
-const cookieParser = require('cookie-parser');
-const app = express();
-const PORT = 3000;
-const cookieController = require('../server/controllers/cookieController.js');
-const userController = require('../server/controllers/userController.js');
+const cookieParser = require('cookie-parser')
+const app = express()
+const PORT = 3000
+const cookieController = require('../server/controllers/cookieController.js')
+const userController = require('../server/controllers/userController.js')
 // const pfController = require('../server/controllers/PFController.js');
 const petController = require('../server/controllers/petController.js')
 const PFRouter = require('../server/routers/PFRouter.js');
 
-app.use(express.json());
-app.use(cookieParser());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
+app.use(cookieParser())
+app.use(express.urlencoded({ extended: true }))
 
 // const corsOptions = {
 //   origin: 'http://localhost:8080',
@@ -30,6 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 // });
 // route to log in / authentication
 app.post('/login', userController.verifyUser, (req, res) => {
+
   return res
   .status(200).json({message: 'user logged in successfully'});
 });
@@ -43,8 +44,18 @@ app.post('/createUser', userController.createUser,cookieController.setSSIDCookie
 app.get('/', (req, res) => {
   return res
     .status(200)
-    .sendFile(path.join(__dirname, '../client/public/index.html'));
-});
+    .sendFile(path.join(__dirname, '../client/public/index.html'))
+})
+
+/**
+ * Used this stack overlflow to fix issue where directly typing in url showed
+ * a not found page,
+ * https://stackoverflow.com/questions/74168230/react-router-v6-issue-only-the-root-route-works-any-other-endpoint-returns
+ */
+app.get('/*', (req, res) => {
+  return res.status(200).sendFile(path.join(__dirname, '../dist/index.html'))
+})
+
 // route to external petfinder API
 app.use('/api', PFRouter);
 
@@ -62,7 +73,7 @@ app.get('/pet', petController.getPet, (req, res) => {
 
 
 // global error handling
-app.use((req, res) => res.sendStatus(404));
+app.use((req, res) => res.sendStatus(404))
 
 // middleware error handling
 app.use((err, req, res, next) => {
@@ -70,13 +81,13 @@ app.use((err, req, res, next) => {
     log: 'Caught Unknown middleware error.',
     status: 500,
     message: { err: 'An unknown error occurred.' },
-  };
-  const { log, status, message } = Object.assign({}, defaultErr, err);
-  console.log('ERROR is: ', log);
-  return res.status(status).send(message);
-});
+  }
+  const { log, status, message } = Object.assign({}, defaultErr, err)
+  console.log('ERROR is: ', log)
+  return res.status(status).send(message)
+})
 
-console.log(`listening on ${PORT}`);
-app.listen(PORT);
+console.log(`listening on ${PORT}`)
+app.listen(PORT)
 
-module.exports = app;
+module.exports = app

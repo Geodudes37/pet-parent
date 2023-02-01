@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import { Link } from "react-router-dom";
 const petTypeArr = [{key:'cat-1' , value:'cat' , displayText:'cat' }, {key: 'dog-1', value: 'dog', displayText: 'dog'}]
 const genderArr = [{key:'male-1', value: 'male', displayText: 'male'},{key:'female-1', value: 'female', displayText: 'female'}]
 const colorArr = [{key: 'black-1', value: 'black', displayText: 'black'}, 
@@ -142,6 +142,7 @@ return (
             <button>
                 Submit Preferences
             </button>
+            <Link to="/dashboard">Dashboard</Link>
         </form>
     </div>
 )
